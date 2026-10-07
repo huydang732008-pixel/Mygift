@@ -2,18 +2,61 @@ const screens = [...document.querySelectorAll(".screen")];
 const hint = document.getElementById("hint");
 
 function show(id) {
-  screens.forEach(s => s.classList.toggle("active", s.id === id));
-  hint.classList.toggle("hide", id !== "home");
+  screens.forEach(screen => {
+    screen.classList.toggle("active", screen.id === id);
+  });
+
+  if (hint) {
+    hint.classList.toggle("hide", id !== "home");
+  }
 }
 
-document.querySelector(".envelope-hotspot").addEventListener("click", () => show("gifts"));
-document.querySelector(".gift-letter").addEventListener("click", () => show("letter"));
-document.querySelector(".gift-flower").addEventListener("click", () => show("flower"));
-document.querySelector(".gift-song").addEventListener("click", () => show("song"));
-document.querySelector(".back-2").addEventListener("click", () => show("gifts"));
-document.querySelector(".back-3").addEventListener("click", () => show("gifts"));
-document.querySelector(".back-4").addEventListener("click", () => show("gifts"));
+// Chuyển trang bằng cả click và touch
+function addTap(selector, target) {
+  const button = document.querySelector(selector);
 
+  if (!button) return;
+
+  let touched = false;
+
+  button.addEventListener("touchend", function (e) {
+    e.preventDefault();
+    touched = true;
+    show(target);
+  }, { passive: false });
+
+  button.addEventListener("click", function (e) {
+    if (touched) {
+      touched = false;
+      return;
+    }
+
+    show(target);
+  });
+}
+
+// Trang chủ → Gifts
+addTap(".envelope-hotspot", "gifts");
+
+// Gifts → Letter
+addTap(".gift-letter", "letter");
+
+// Gifts → Flower
+addTap(".gift-flower", "flower");
+
+// Gifts → Song
+addTap(".gift-song", "song");
+
+// Letter → Gifts
+addTap(".back-2", "gifts");
+
+// Flower → Gifts
+addTap(".back-3", "gifts");
+
+// Song → Gifts
+addTap(".back-4", "gifts");
+
+// Bàn phím máy tính
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") show("gifts");
   if (e.key === "1") show("home");
