@@ -36,7 +36,7 @@ body { font-family:"Playfair Display", Georgia, serif; }
   .gift-letter { width:25%; height:38%; left:8%; top:35%; }
   .gift-flower { width:27%; height:40%; left:37%; top:34%; }
   .gift-song { width:27%; height:40%; left:65%; top:34%; }
-  .back-2, .back-3, .back-4 { width:25%; left:50%; }
+  .back-2, .back-3, .back-4 { width:18%; left:41%; }
   .video-link { width:48%; height:28%; left:20%; top:21%; }
 }
 .hint {
