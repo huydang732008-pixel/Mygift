@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Pacifico&family=Cormorant+Garamond:ital,wght@1,500&display=swap');
+
+:root { --red:#5b0c0e; }
+* { box-sizing:border-box; }
+html,body { margin:0; width:100%; height:100%; overflow:hidden; background:var(--red); }
+body { font-family:"Playfair Display", Georgia, serif; }
+#app { width:100%; height:100%; position:relative; background:var(--red); }
+.screen {
+  position:absolute; inset:0; display:none; align-items:center; justify-content:center;
+  background:var(--red);
+  opacity:0; transition:opacity .45s ease;
+}
+.screen.active { display:flex; opacity:1; }
+.page-image {
+  width:100%; height:100%; object-fit:contain; display:block;
+  user-select:none; -webkit-user-drag:none;
+}
+.hotspot, .video-link {
+  position:absolute; border:0; background:transparent; cursor:pointer;
+  padding:0; z-index:5;
+}
+.hotspot:focus-visible, .video-link:focus-visible {
+  outline:2px solid #f4dfb2; outline-offset:4px; border-radius:12px;
+}
+/* Hotspots are percentage-based so the page keeps its layout at different sizes. */
+.envelope-hotspot { width:23%; height:35%; left:38%; top:30%; transform:rotate(-5deg); }
+.gift-letter { width:17%; height:35%; left:12%; top:37%; }
+.gift-flower { width:18%; height:38%; left:42%; top:35%; }
+.gift-song { width:20%; height:36%; left:69%; top:36%; }
+.back-2, .back-3, .back-4 { width:10%; height:8%; left:45%; bottom:4%; }
+.video-link { width:35%; height:27%; left:25%; top:22%; }
+
+/* Small-screen tuning: preserve the reference artwork while making taps comfortable. */
+@media (max-width: 600px) {
+  .envelope-hotspot { width:34%; height:35%; left:33%; top:30%; }
+  .gift-letter { width:25%; height:38%; left:8%; top:35%; }
+  .gift-flower { width:27%; height:40%; left:37%; top:34%; }
+  .gift-song { width:27%; height:40%; left:65%; top:34%; }
+  .back-2, .back-3, .back-4 { width:18%; left:41%; }
+  .video-link { width:48%; height:28%; left:20%; top:21%; }
+}
+.hint {
+  position:fixed; left:50%; bottom:12px; transform:translateX(-50%);
+  color:#f5dfb0; font-size:12px; opacity:.8; pointer-events:none;
+  transition:opacity .3s ease;
+}
+.hint.hide { opacity:0; }

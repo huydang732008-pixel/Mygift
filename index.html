@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#5b0c0e">
+  <title>Happy Monthsary, Love!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app" aria-label="Anniversary surprise">
+    <section class="screen active" id="home">
+      <img class="page-image" src="assets/page0.png" alt="Happy Monthsary, Love">
+      <button class="hotspot envelope-hotspot" aria-label="Open the envelope"></button>
+    </section>
+
+    <section class="screen" id="gifts">
+      <img class="page-image" src="assets/page1.png" alt="For you">
+      <button class="hotspot gift-letter" aria-label="Open letter"></button>
+      <button class="hotspot gift-flower" aria-label="Open flowers"></button>
+      <button class="hotspot gift-song" aria-label="Open song"></button>
+    </section>
+
+    <section class="screen" id="letter">
+      <img class="page-image" src="assets/page2.png" alt="A letter for you">
+      <button class="hotspot back-2" aria-label="Back"></button>
+    </section>
+
+    <section class="screen" id="flower">
+      <img class="page-image" src="assets/page3.png" alt="Flowers for you">
+      <button class="hotspot back-3" aria-label="Back"></button>
+    </section>
+
+    <section class="screen" id="song">
+      <img class="page-image" src="assets/page4.png" alt="Song dedicated for you">
+      <button class="hotspot back-4" aria-label="Back"></button>
+      <a class="video-link" href="https://www.youtube.com/watch?v=2VMG0ZwNjMg&list=RD2VMG0ZwNjMg&index=2" target="_blank" rel="noopener" aria-label="Watch Nahanap Kita on YouTube"></a>
+    </section>
+  </main>
+
+  <div class="hint" id="hint">Tap the envelope to open ♡</div>
+  <script src="script.js"></script>
+</body>
+</html>
