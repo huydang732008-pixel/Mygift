@@ -27,7 +27,7 @@ body { font-family:"Playfair Display", Georgia, serif; }
 .gift-letter { width:17%; height:35%; left:12%; top:37%; }
 .gift-flower { width:18%; height:38%; left:42%; top:35%; }
 .gift-song { width:20%; height:36%; left:69%; top:36%; }
-.back-2, .back-3, .back-4 { width:10%; height:8%; left:45%; bottom:4%; }
+.back-2, .back-3, .back-4 { width:30%; height:15%; left:35%; bottom:25%; }
 .video-link { width:35%; height:27%; left:25%; top:22%; }
 
 /* Small-screen tuning: preserve the reference artwork while making taps comfortable. */
